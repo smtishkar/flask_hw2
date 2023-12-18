@@ -1,10 +1,7 @@
 {% extends "layout.html" %}
-{% block title %}
-{{ title }}
-{% endblock %}
 
 {% block content %}
-<form action="/form" method="post">
+<div class="container m-3">
     {% with messages = get_flashed_messages(with_categories=true) %}
         {% if messages %}
             {% for category, message in messages %}
@@ -14,7 +11,10 @@
             {% endfor %}
         {% endif %}
     {% endwith %}
-    <input type="text" name="name" placeholder="Имя">
-    <input type="submit" value="Отправить">
-</form>
-{% endblock %}
+    <form method=post>
+        <input type="text", name="name", placeholder="Имя">
+        <input type="text", name="email", placeholder="email">
+        <input type="submit" value="Отправить">
+    </form>
+</div>
+{% endblock content %}

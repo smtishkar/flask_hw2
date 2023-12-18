@@ -19,12 +19,9 @@ def index():
 @app.post('/')
 def index_post():
     name = request.form.get('name')
-    # flash (f'Привет, {name}')
     flash (f'Привет, {name}')
     return redirect(url_for('index'))
 
-    # return render_template('flash_form.html', context=name)
-    # return render_template('flash_form.html')
 
 
 if __name__ == '__main__':
